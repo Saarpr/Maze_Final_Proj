@@ -21,6 +21,9 @@ public:
     int get_height() const {
         return GRID_WIDTH;
     }
+    std::vector<std::vector<char>> get_grid(){
+           return grid;
+    }
     void PrintGrid() {
         for (int i=0; i<GRID_HEIGHT; ++i)
         {
@@ -29,6 +32,9 @@ public:
             }
             std::cout << std::endl;
         }
+    }
+    void set_char_in_grid(int x , int y , char sign){
+        grid[x][y] = sign;
     }
 
 private:

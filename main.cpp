@@ -2,8 +2,11 @@
 #include "maze/Maze2d.h"
 #include "maze/Maze2dGenerator.h"
 int main() {
-    Maze2d mz(11,2);
-    mz.PrintGrid();
+    srand(time(0));
+    randomMazeGenerator random;
+    Maze2d* mz = random.Generte(5,5);
+    mz->PrintGrid();
+    return 0;
 }
 //============================================================================= // maze.cpp
 //
