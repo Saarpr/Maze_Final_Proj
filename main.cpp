@@ -1,9 +1,9 @@
-//#include <iostream>
+#include <iostream>
 #include "maze/Maze2d.h"
+#include "maze/Maze2dGenerator.h"
 int main() {
-    Maze2d mz(11,9);
+    Maze2d mz(11,2);
     mz.PrintGrid();
-    return 0;
 }
 //============================================================================= // maze.cpp
 //

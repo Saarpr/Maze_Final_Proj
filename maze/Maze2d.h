@@ -1,9 +1,7 @@
 //
 // Created by Saar Pernik on 09/08/2020.
 //
-
-#ifndef UNTITLED1_MAZE2D_H
-#define UNTITLED1_MAZE2D_H
+#pragma once
 #include <vector>
 #include <iostream>
 #define NORTH 0
@@ -13,18 +11,34 @@
 
 class Maze2d {
 public:
-    Maze2d(int width , int height);
-    void PrintGrid();
+    Maze2d(int width, int height):GRID_WIDTH(width) , GRID_HEIGHT(height)
+    {
+        ResetGrid();
+    }
+    int get_width() const {
+        return GRID_WIDTH;
+    }
+    int get_height() const {
+        return GRID_WIDTH;
+    }
+    void PrintGrid() {
+        for (int i=0; i<GRID_HEIGHT; ++i)
+        {
+            for (int j = 0; j < GRID_WIDTH; ++j) {
+                std::cout << grid[i][j];
+            }
+            std::cout << std::endl;
+        }
+    }
 
 private:
-    void Visit(int x, int y);
-    void ResetGrid();
-    int IsInBounds(int x, int y);
+    void ResetGrid() { // Fills the grid with walls ('#' characters).
+        grid.resize(GRID_HEIGHT, std::vector<char>(GRID_WIDTH, '#'));
+    }
 
+private:
     int GRID_WIDTH;
     int GRID_HEIGHT;
     std::vector<std::vector<char>> grid;
 };
 
-
-#endif //UNTITLED1_MAZE2D_H
